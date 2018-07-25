@@ -53,6 +53,7 @@ Tomcat/conf/tomcat-users.xml加入：
 6.make Start up setting
 
 方法一：
+
 6.1.创建tomcat自动启动命令脚本
 
 vi /etc/init.d/tomcat
@@ -131,6 +132,7 @@ chkconfig –add tomcat
 chkconfig tomcaton
 
 方法二：
+
 7、设置jdk环境变量
 vi /etc/profile
 #在底部添加
