@@ -51,6 +51,7 @@ Tomcat/conf/tomcat-users.xml加入：
  allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
 -->
 6.make Start up setting
+
 方法一：
 6.1.创建tomcat自动启动命令脚本
 
@@ -128,6 +129,7 @@ chkconfig –add tomcat
 
 6.5.设置开机启动 
 chkconfig tomcaton
+
 方法二：
 7、设置jdk环境变量
 vi /etc/profile
@@ -148,10 +150,17 @@ sudo firewall-cmd --reload
 9、设置开机自启动
 
 如果要开机自启动tomcat，配置如下：
+
 chmod +x /etc/rc.d/rc.local
+
 vi /etc/rc.d/rc.local
+
 在文件中添加下面几行：
+
 export JAVA_HOME=/usr/local/javajdk
+
 export PATH=$JAVA_HOME/bin:$PATH
+
 export CLASSPATH=$JAVA_HOME/jre/lib/ext:$JAVA_HOME/lib/tools.jar
+
 /usr/local/tomcat/bin/startup.sh
