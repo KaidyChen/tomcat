@@ -1,0 +1,14 @@
+[Unit]
+Description=The connector Process Manager
+After=syslog.target network.target 
+ 
+[Service]
+;Type=simple
+Type=forking
+ExecStart=/opt/project/connector/shell/connectord start      
+ExecReload=/opt/project/connector/shell/connectord restart
+ExecStop=/opt/project/connector/shell/connectord stop
+RemainAfterExit=true 
+[Install]
+WantedBy=multi-user.target
+

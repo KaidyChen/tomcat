@@ -1,0 +1,13 @@
+[Unit]
+Description=The emqttd Process Manager
+After=syslog.target network.target  
+ 
+[Service]
+Type=forking
+ExecStart=/opt/project/emqttd/shell/emqttd start       
+ExecReload=/opt/project/emqttd/shell/emqttd restart
+ExecStop=/opt/project/emqttd/shell/emqttd stop
+RemainAfterExit=true
+[Install]
+WantedBy=multi-user.target
+
